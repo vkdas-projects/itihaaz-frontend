@@ -16,7 +16,7 @@ const FeaturedSection = () => {
   } = useFeaturedSnippetsStore();
 
   const SnippetsComponent: Array<JSX.Element> = [];
-  if (articles) {
+  if (articles !== null) {
     articles.forEach((res, idx: number) => {
       SnippetsComponent.push(
         <CardPreview index={idx} data={res} key={res._id} />
