@@ -1,0 +1,25 @@
+.snippet-container{
+
+    .background{
+        
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100vw;
+
+        z-index: -1;
+        // background: radial-gradient(circle, #283618 10%, transparent 11%),radial-gradient(circle at bottom left, #283618 5%, transparent 6%),radial-gradient(circle at bottom right, #283618 5%, transparent 6%),radial-gradient(circle at top left, #283618 5%, transparent 6%),radial-gradient(circle at top right, #283618 5%, transparent 6%);
+        // background-size: 6em 6em;
+        // background-color: #f5f5f5;
+        // opacity:0.4
+        // background-image: repeating-linear-gradient(45deg, transparent, transparent 31px, #283618 31px, #283618 62px);
+        // background-color: #fce77d;
+        // opacity: 0.4
+        animation: fadeIn 1s;
+    }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 0.7; }
+  }
