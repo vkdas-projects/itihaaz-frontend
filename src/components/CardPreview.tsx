@@ -68,7 +68,7 @@ const CardPreview = (props: { index: number; data: CardData }) => {
         <div className="text-sm py-1">{props.data.summary}</div>
       </div>
       <div className="flex items-center justify-between">
-        <div className="flex gap-1 items-center">
+        <div className="flex gap-1 items-center bg-red-500 px-2 py-1 rounded text-white">
         
           <div className="text-xl font-bold">{props.data.data.length}</div>
           <RiSlideshow3Line />

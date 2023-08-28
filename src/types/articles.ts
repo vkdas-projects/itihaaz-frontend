@@ -1,7 +1,7 @@
 
 
 export type IArticlesStore = {
-  data: Array<CardData> | null;
+  data?: Array<CardData>;
   isLoading: boolean;
   error?: null | unknown;
   fetchArticles?: () => void;
@@ -10,7 +10,7 @@ export type IArticlesStore = {
 };
 
 export type IArticleStore = {
-  data: CardData | null;
+  data?: CardData;
   isLoading: boolean;
   error?: null | unknown;
   fetchSingleArticle: (id: string) => void;

@@ -54,10 +54,13 @@ const Navbar = () => {
           !isOpen ? "left-[-1000px]" : "left-0"
         } fixed flex flex-col h-[calc(100vh-60px)] z-[999] bg-[#f5f5f5] border-r border-t w-[75%]  top-[60px]  transition-all space-y-6 px-5 pt-10 md:hidden text-center`}
       >
-        <Link className="text-xl font-bold" to={`/about`}>
+        <Link onClick={()=> setIsOpen(!isOpen)} className="text-xl font-bold" to={`/`}>
+          Home
+        </Link>
+        <Link onClick={()=> setIsOpen(!isOpen)} className="text-xl font-bold" to={`/about`}>
           About
         </Link>
-        <Link className="text-xl font-bold" to={`/contact`}>
+        <Link onClick={()=> setIsOpen(!isOpen)} className="text-xl font-bold" to={`/contact`}>
           Contact
         </Link>
       </div>

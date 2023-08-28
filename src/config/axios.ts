@@ -1,9 +1,15 @@
 import axios from "axios";
 import { CardData } from "../types/articles";
+import { toast } from "react-hot-toast";
+
+// localhost 
+// const instance = axios.create({
+//   baseURL: "http://192.168.29.19:3000/api/",
+//   timeout: 1000,
+// });
 
 const instance = axios.create({
   baseURL: "https://scary-skirt-jay.cyclic.cloud/api/",
-  timeout: 1000,
 });
 
 export const getAllArticles = async () => {
@@ -11,7 +17,8 @@ export const getAllArticles = async () => {
     const res = await instance.get("/articles/all");
     return res.data;
   } catch (err) {
-    return err;
+    console.log(err);
+    toast.error("Unable to get articles")
   }
 };
 
@@ -20,7 +27,8 @@ export const getArticles = async () => {
     const res = await instance.get("/articles");
     return res.data;
   } catch (err) {
-    return err;
+    console.log(err);
+    toast.error("Unable to get articles")
   }
 };
 
@@ -29,7 +37,8 @@ export const getFeaturedArticles = async () => {
     const res = await instance.get("/articles/featured");
     return res.data;
   } catch (err) {
-    return err;
+    console.log(err);
+    toast.error("Unable to get featured articles")
   }
 };
 
@@ -38,7 +47,8 @@ export const getSingleArticle = async (id: string) => {
     const res = await instance.get(`/articles/${id}`);
     return res.data;
   } catch (err) {
-    return err;
+    console.log(err);
+    toast.error("Unable to get singel article")
   }
 };
 
@@ -52,7 +62,8 @@ export const createArticle = async (data: CardData) => {
       return res.data;
     }
   } catch (err) {
-    return err;
+    console.log(err);
+    toast.error("Unable to create article")
   }
 };
 
@@ -66,7 +77,8 @@ export const updateArticle = async (data: CardData) => {
       return res.data;
     }
   } catch (err) {
-    return err;
+    console.log(err);
+    toast.error("Unable to update")
   }
 };
 
@@ -80,7 +92,8 @@ export const deleteArticle = async (id: string) => {
       return res.data;
     }
   } catch (err) {
-    return err;
+    console.log(err);
+    toast.error("Unable to delete")
   }
 };
 
@@ -94,7 +107,8 @@ export const createUserSubscription = async (email: string) => {
       return res.data;
     }
   } catch (err) {
-    return err;
+    console.log(err);
+    toast.error("Unable to create subscription")
   }
 };
 
@@ -105,5 +119,6 @@ export const login = async (data: { email: string; password: string }) => {
     return response.data;
   } catch (err) {
     console.log(err);
+    toast.error("Unable to login")
   }
 };

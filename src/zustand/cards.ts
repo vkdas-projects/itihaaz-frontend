@@ -78,7 +78,7 @@ export const useCreateSnippetStore = create<{
     if (res !== null) {
       let filteredData = useGetAllArticles.getState().data;
       if (filteredData !== null) {
-        filteredData = filteredData.filter((item: CardData) => item._id !== id);
+        filteredData = filteredData?.filter((item: CardData) => item._id !== id);
       }
       useGetAllArticles.setState({
         data: filteredData,

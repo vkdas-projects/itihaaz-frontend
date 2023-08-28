@@ -69,6 +69,7 @@ const CardDataPreview = (props: {
   } else {
     Element = (
       <div
+      ref={windowRef}
         style={{
           height: "calc(100dvh - 80px)",
         }}

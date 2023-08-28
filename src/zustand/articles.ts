@@ -9,7 +9,7 @@ import { IArticleStore, IArticlesStore } from "../types/articles";
 
 
 export const useGetAllArticles = create<IArticlesStore>((set) => ({
-  data: null,
+  data: undefined,
   isLoading: false,
   error: null,
   fetchAllArticles: async () => {
@@ -26,7 +26,7 @@ export const useGetAllArticles = create<IArticlesStore>((set) => ({
 
 
 export const useSnippetsStore = create<IArticlesStore>((set) => ({
-  data: null,
+  data: undefined,
   isLoading: false,
   error: null,
   fetchArticles: async () => {
@@ -42,7 +42,7 @@ export const useSnippetsStore = create<IArticlesStore>((set) => ({
 }));
 
 export const useFeaturedSnippetsStore = create<IArticlesStore>((set) => ({
-  data: null,
+  data: undefined,
   isLoading: false,
   error: null,
   fetchFeaturedArticles: async () => {
@@ -58,7 +58,7 @@ export const useFeaturedSnippetsStore = create<IArticlesStore>((set) => ({
 }));
 
 export const useSingleArticleStore = create<IArticleStore>((set) => ({
-  data: null,
+  data: undefined,
   isLoading: false,
   error: null,
   fetchSingleArticle: async (id: string) => {

@@ -18,11 +18,13 @@ const HeroSection = () => {
     createUserSubscriptionFunction(data.email);
   };
   return (
-    <div className="flex-col md:flex-row flex  md:h-[300px] justify-between items-center">
+    <div className="flex-col md:flex-row flex  md:h-[450px] justify-between items-center">
       <div className="w-full md:w-[50%] space-y-4">
-        <div className="text-3xl md:text-5xl font-bold">
-          {" "}
-          History simplified !
+        <div className="text-5xl md:text-5xl font-bold">
+        <div className="md:text-[5rem] md:space-y-[-2.4rem] ">
+            <div className="md:mb-10">History</div>
+            <div className="ml-8 md:ml-20">Simplified !</div>
+          </div>
         </div>
         <div className="text-xl">
           Discover stories and facts from all over the Nation, <br /> all at one
