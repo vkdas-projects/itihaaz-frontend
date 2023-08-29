@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { CardData } from "../types/articles";
 import { RiSlideshow3Line } from "react-icons/ri";
 
+
 const CardPreview = (props: { index: number; data: CardData }) => {
   const colors: Array<{
     bgColor: string;
@@ -41,6 +42,10 @@ const CardPreview = (props: { index: number; data: CardData }) => {
       textColor: "#000000",
     },
   ];
+  const boldTextRegExp = new RegExp(/\*\*(.*?)\*\*/gm);
+  function convertText(value: string) {
+    return value.replace(boldTextRegExp, "<strong>$1</strong>");
+  }
 
   const PreviewData = (
     <div
@@ -65,7 +70,12 @@ const CardPreview = (props: { index: number; data: CardData }) => {
           src={props?.data?.data[0]?.image_url}
           alt=""
         />
-        <div className="text-sm py-1">{props.data.summary}</div>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: convertText(props?.data?.summary),
+          }}
+        className=" whitespace-pre-wrap py-1">
+        </div>
       </div>
       <div className="flex items-center justify-between">
         <div className="flex gap-1 items-center bg-red-500 px-2 py-1 rounded text-white">
